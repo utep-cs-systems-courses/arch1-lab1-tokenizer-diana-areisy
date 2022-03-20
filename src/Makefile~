@@ -1,0 +1,18 @@
+
+OBJS = history.o tokenizer.o
+CFLAGS= -g -03
+
+
+all: tokenizer
+
+tokenizer: $(OBJS)
+	cc -o tokenizer $(CFLAGS) $(OBJS)
+$(OBJS): history.h tokenizer.h
+
+$
+clean:
+	rm -f *.0 tokenizer
+
+run: tokenizer
+	./tokenizer
+
